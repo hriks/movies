@@ -18,6 +18,6 @@ from django.contrib import admin
 from imdb import apis
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^create', apis.createUser),
+    url(r'^', admin.site.urls),
 ]
