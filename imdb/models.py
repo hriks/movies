@@ -27,7 +27,6 @@ class User(models.Model):
 
     @classmethod
     def addNew(cls, *args, **kwargs):
-        import pdb; pdb.set_trace()
         return cls.objects.create(*args, **kwargs)
 
     def assignReferenceNumber(self):

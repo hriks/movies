@@ -8,7 +8,6 @@ ERROR_CODES = {
     "IMDB101": "User Already Registered with this username",
     "IMDB102": "Invalid reference_no. Please provide correct reference_no",
     "IMDB103": "Invalid username provided",
-    "IMDB104": "Invalid admin_reference_no provided",
     "IMDB105": "Invalid admin_reference_no provided.",
     "IMDB106": "Invalid role provided."
 }
