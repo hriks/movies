@@ -7,20 +7,28 @@ from django.utils.crypto import get_random_string
 
 import uuid
 
+ROLES = (
+    ('admin', 'Admin'),
+    ('user', 'User')
+)
+
 
 class User(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    role = models.CharField(max_length=32, choices=(
-        ('admin', 'Admin'),
-        ('user', 'user')
-    ), default='user', db_index=True)
+    role = models.CharField(
+        max_length=32, choices=ROLES, default='user', db_index=True)
     reference_no = models.CharField(max_length=15, null=True, blank=True)
-    username = models.CharField(max_length=24)
+    username = models.CharField(max_length=5)
 
     def save(self, *args, **kwargs):
         if self.reference_no is None:
             self.assignReferenceNumber()
         super(User, self).save(*args, **kwargs)
+
+    @classmethod
+    def addNew(cls, *args, **kwargs):
+        import pdb; pdb.set_trace()
+        return cls.objects.create(*args, **kwargs)
 
     def assignReferenceNumber(self):
         temp_ref = 'imdb:' + get_random_string(10, allowed_chars='3456789')
