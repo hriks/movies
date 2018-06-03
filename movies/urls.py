@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from imdb import apis
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^create', apis.createUser),
 ]

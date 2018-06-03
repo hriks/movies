@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from imdb.models import Movies
+from imdb.models import Movies, User
 
 
 class MoviesSerializer(serializers.ModelSerializer):
@@ -12,3 +12,10 @@ class MoviesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movies
         fields = ('genre', 'popularity', 'director', 'imdb_score', 'name')
+
+
+class UserSerilizer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('username', 'role', 'reference_no')
