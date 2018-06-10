@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from rest_framework.decorators import api_view
 from imdb.models import User, ROLES
 from imdb.handlers import (

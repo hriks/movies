@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from movies import settings
 
 from rest_framework.response import Response
